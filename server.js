@@ -36,14 +36,14 @@ app.get('/api/notes', (req, res) => {
       });
 
 });
-
+// api post route
 app.post('/api/notes', (req, res) => {
   const newNote = req.body; 
   newNote.id = uuidv4(); 
   fs.readFile(__dirname + '/db/db.json', 'utf8', (err, data) => {
     if (err) throw err; 
     const notes = JSON.parse(data); 
-
+    // adds new note to db file
     notes.push(newNote); 
     fs.writeFile(__dirname + '/db/db.json', JSON.stringify(notes), (err) => {
       if (err) throw err; 
