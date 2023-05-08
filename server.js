@@ -2,7 +2,7 @@
 const express = require("express");
 const fs = require("fs");
 // adds unique id to notes
-const uuid = require('uuid');
+const { v4: uuidv4 } = require("uuid");
 
 //asigns variable to use express through
 const app = express();
@@ -19,11 +19,12 @@ app.use(express.urlencoded({ extended: true }));
 //middleware that allows access to files in the public folder
 app.use(express.static("public"));
 
-
+// get route for html
 app.get('/notes', (req, res) => {
     res.sendFile(__dirname + '/public/notes.html'); 
   });
 
+//get route for api
 app.get('/api/notes', (req, res) => {
 
     fs.readFile(__dirname + '/db/db.json', 'utf8', (err, data) => {
@@ -35,6 +36,45 @@ app.get('/api/notes', (req, res) => {
       });
 
 });
+
+app.post('/api/notes', (req, res) => {
+  const newNote = req.body; 
+  newNote.id = uuidv4(); 
+  fs.readFile(__dirname + '/db/db.json', 'utf8', (err, data) => {
+    if (err) throw err; 
+    const notes = JSON.parse(data); 
+    
+    notes.push(newNote); 
+    fs.writeFile(__dirname + '/db/db.json', JSON.stringify(notes), (err) => {
+      if (err) throw err; 
+      res.json(newNote); 
+    });
+  });
+});;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // wildcard route returning home
 app.get('*', (req, res) => {
