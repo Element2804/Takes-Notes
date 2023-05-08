@@ -43,7 +43,7 @@ app.post('/api/notes', (req, res) => {
   fs.readFile(__dirname + '/db/db.json', 'utf8', (err, data) => {
     if (err) throw err; 
     const notes = JSON.parse(data); 
-    
+
     notes.push(newNote); 
     fs.writeFile(__dirname + '/db/db.json', JSON.stringify(notes), (err) => {
       if (err) throw err; 
@@ -51,26 +51,6 @@ app.post('/api/notes', (req, res) => {
     });
   });
 });;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
