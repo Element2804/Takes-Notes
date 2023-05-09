@@ -1,6 +1,6 @@
 # Takes-Notes
 
-This program uses the inquirer package from node.js to generate a custom SVG Logo based on user responses.
+This program allows the user to type and save notes 
 
 ## License
 This application is covered under the MIT license.<br>
@@ -13,8 +13,12 @@ N/A
 
 ## Usage
 
+Follow this link https://immense-taiga-76537.herokuapp.com/notes and begin typing.
 
 
 ## Credits
 
+- https://www.heroku.com/
+- https://www.npmjs.com/package/uuidv4
+- https://www.geeksforgeeks.org/express-js-express-static-function/
 
