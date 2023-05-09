@@ -19,10 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 //middleware that allows access to files in the public folder
 app.use(express.static("public"));
 
-// get route for html
-app.get('/notes', (req, res) => {
-    res.sendFile(__dirname + '/public/notes.html'); 
-  });
+
 
 //get route for api
 app.get('/api/notes', (req, res) => {
@@ -32,7 +29,7 @@ app.get('/api/notes', (req, res) => {
         const notes = JSON.parse(data); 
 
         res.json(notes);
-      console.log(notes);
+        
       });
 
 });
@@ -52,6 +49,10 @@ app.post('/api/notes', (req, res) => {
   });
 });;
 
+// get route for html
+app.get('/notes', (req, res) => {
+  res.sendFile(__dirname + '/public/notes.html'); 
+});
 
 // wildcard route returning home
 app.get('*', (req, res) => {
