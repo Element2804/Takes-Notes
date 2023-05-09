@@ -2,5 +2,24 @@
   "dependencies": {
     "express": "^4.18.2",
     "uuidv4": "^6.2.13"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "takes-notes",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Element2804/Takes-Notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Element2804/Takes-Notes/issues"
+  },
+  "homepage": "https://github.com/Element2804/Takes-Notes#readme"
 }
