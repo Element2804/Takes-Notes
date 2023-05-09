@@ -53,9 +53,6 @@ app.post('/api/notes', (req, res) => {
 });;
 
 
-
-
-
 // wildcard route returning home
 app.get('*', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
