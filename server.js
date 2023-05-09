@@ -60,5 +60,5 @@ app.get('*', (req, res) => {
 
 //initializes Port
 app.listen(PORT, () => {
-    console.log(PORT);
+    console.log(`http://localhost:${PORT}`);
 });
